@@ -13,7 +13,6 @@ import java.util.stream.Collectors;
 @Log4j2
 @SpringBootApplication
 public class JavaStreamsApiApplication {
-
 	public static void main(String[] args) throws IOException {
 		SpringApplication.run(JavaStreamsApiApplication.class, args);
 		log.info("Hello Java Streams API");
