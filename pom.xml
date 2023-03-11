@@ -2,20 +2,55 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>io.github.anantharajuc</groupId>
+	<artifactId>java-streams-api</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>Java Streams API</name>
+	<url>https://github.com/AnanthaRajuC/Java-Streams-API</url>
+	<description>Demo project for Java Streams API</description>
+
+	<!-- Start - Project Owner -->
+	<developers>
+		<developer>
+			<name>Anantha Raju C</name>
+			<email>arcswdev@gmail.com</email>
+			<timezone>UTC+05:30</timezone>
+		</developer>
+	</developers>
+	<!-- End - Project Owner -->
+
+	<!-- Start - source repository -->
+	<scm>
+		<connection>https://github.com/AnanthaRajuC/Java-Streams-API.git</connection>
+		<developerConnection>git@github.com:AnanthaRajuC/Java-Streams-API.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
+	<!-- End - source repository -->
+
+	<!-- Start - issue management -->
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/AnanthaRajuC/Java-Streams-API/issues</url>
+	</issueManagement>
+	<!-- End - issue management -->
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.6.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>io.github.anantharajuc</groupId>
-	<artifactId>java-streams-api</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>Java Streams API</name>
-	<description>Demo project for Java Streams API</description>
+
 	<properties>
-		<java.version>11</java.version>
+		<java.version>1.8</java.version>
+		<json-simple.version>1.1.1</json-simple.version>
+		<commons-io.version>2.4</commons-io.version>
+		<guava.version>22.0</guava.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -32,12 +67,14 @@
 		<dependency>
 			<groupId>com.googlecode.json-simple</groupId>
 			<artifactId>json-simple</artifactId>
-			<version>1.1.1</version>
+			<version>${json-simple.version}</version>
 		</dependency>
+		<!-- Start - Database migration dependencies -->
 		<dependency>
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-core</artifactId>
 		</dependency>
+		<!-- End - Database migration dependencies -->
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
@@ -50,12 +87,12 @@
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
-			<version>2.4</version>
+			<version>${commons-io.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
-			<version>22.0</version>
+			<version>${guava.version}</version>
 		</dependency>
 
 		<dependency>
@@ -78,6 +115,7 @@
 
 	<build>
 		<plugins>
+			<!-- Package as an executable jar/war. -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
